@@ -1,0 +1,97 @@
+o,w,y,g
+cs,sck,sdd,sdi
+
+
+w,y,g,o
+13,12,11,10
+
+
+cs=10
+sck=13
+sdd=12
+sdi=11
+
+
+API
+
+be sure to change localhost:3000 to the correct ip of the host station
+
+tracking a lap
+
+POST http://localhost:3000/api/v1/lap_track
+
+or
+
+GET http://localhost:3000/api/v1/lap_track/create
+
+starting a new race
+
+GET http://localhost:3000/api/v1/race_session/new
+
+getting data of the current race session
+
+GET http://localhost:3000/api/v1/monitor
+
+needed params
+
+    transponder_token
+    lap_time_in_ms
+
+    
+    
+hello
+COM12
+{u'data': [{u'avg_lap_time': 14767,
+            u'fastest_lap': {u'lap_num': 4, u'lap_time': 10372},
+            u'lap_count': 8,
+            u'last_lap': {u'lap_num': 8, u'lap_time': 11000},
+            u'latest_tracked': True,
+            u'pilot': {u'deleted_at': None,
+                       u'id': 10,
+                       u'image': {u'url': u'/uploads/pilot/image/10/janko.jpg'},
+                       u'name': u'janko',
+                       u'quad': u'zmr250',
+                       u'team': u'fpvracing.mk',
+                       u'transponder_token': u'16'},
+            u'position': 1},
+           {u'avg_lap_time': 28574,
+            u'fastest_lap': {u'lap_num': 6, u'lap_time': 13535},
+            u'lap_count': 6,
+            u'last_lap': {u'lap_num': 6, u'lap_time': 13535},
+            u'latest_tracked': False,
+            u'pilot': {u'deleted_at': None,
+                       u'id': 7,
+                       u'image': {u'url': u'/uploads/pilot/image/7/bnikov.jpg'},
+                       u'name': u'bnikov',
+                       u'quad': u'alien',
+                       u'team': u'fpvracing.mk',
+                       u'transponder_token': u'13'},
+            u'position': 2},
+           {u'avg_lap_time': 17653,
+            u'fastest_lap': {u'lap_num': 1, u'lap_time': 17653},
+            u'lap_count': 1,
+            u'last_lap': {u'lap_num': 1, u'lap_time': 17653},
+            u'latest_tracked': False,
+            u'pilot': {u'deleted_at': None,
+                       u'id': 6,
+                       u'image': {u'url': u'/uploads/pilot/image/6/marjan.jpg'},
+                       u'name': u'marjan',
+                       u'quad': u'shrike',
+                       u'team': u'fpvracing.mk',
+                       u'transponder_token': u'11'},
+            u'position': 3},
+           {u'avg_lap_time': 19070,
+            u'fastest_lap': {u'lap_num': 1, u'lap_time': 19070},
+            u'lap_count': 1,
+            u'last_lap': {u'lap_num': 1, u'lap_time': 19070},
+            u'latest_tracked': False,
+            u'pilot': {u'deleted_at': None,
+                       u'id': 8,
+                       u'image': {u'url': u'/uploads/pilot/image/8/fakem.jpg'},
+                       u'name': u'fakem',
+                       u'quad': u'martian',
+                       u'team': u'fpvracing.mk',
+                       u'transponder_token': u'14'},
+            u'position': 4}],
+ u'session': {u'current_lap_count': 8, u'maps_laps': 0, u'title': u'x4'}}
+    
