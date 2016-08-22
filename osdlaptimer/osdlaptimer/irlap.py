@@ -5,13 +5,14 @@ import sys
 
 class IrLap(threading.Thread):
 
-    def __init__(self, controller):
+    def __init__(self, controller, hostip):
         threading.Thread.__init__(self)
         self.controller = controller
+        self.hostip = hostip
 
     def run(self): 
         # Bind the socket to the port
-        server_address = ('192.168.1.110', 3007)
+        server_address = (self.hostip, 3007)
         print >>sys.stderr, 'starting up on %s port %s' % server_address
         
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

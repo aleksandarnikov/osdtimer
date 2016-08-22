@@ -10,7 +10,8 @@ class SerialComm(threading.Thread):
         self.controller = controller
 
     def run(self): 
-        ser = serial.Serial("COM12")  # open first serial port
+        #ser = serial.Serial("COM12")  # open first serial port
+        ser = serial.Serial("COM24")  # open first serial port
         print ser.portstr       # check which port was really used
         time.sleep(3)
         while True:

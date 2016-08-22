@@ -5,13 +5,14 @@ import time
 
 class LapTimerInfo(threading.Thread):
 
-    def __init__(self, controller):
+    def __init__(self, controller, hostip):
         threading.Thread.__init__(self)
         self.controller = controller
+        self.hostip = hostip
 
     def run(self): 
         while True:
-            response = requests.get('http://192.168.1.110/api/v1/monitor')
+            response = requests.get('http://' + self.hostip + '/api/v1/monitor')
             data = response.json()
             
             for x in data['data']:

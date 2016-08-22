@@ -3,5 +3,8 @@ from osdlaptimer.controller import Controller
 
 print "hello"
 
-controller = Controller();
+hostip = "192.168.42.1"
+#hostip = "192.168.1.110"
+
+controller = Controller(hostip);
 controller.start();
