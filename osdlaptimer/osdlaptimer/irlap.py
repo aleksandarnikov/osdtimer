@@ -29,7 +29,8 @@ class IrLap(threading.Thread):
                     token = ss[1]
                     time = ss[2]
                     print token + "/" + time
-                    if token == '16':
+                    if token == '12':
+                        print "LAP"
                         self.controller.sendToSerialPort("-")
                         self.controller.sendToSerialPort("4" + self.controller.timeFromMillis(time))
                 s = ''
