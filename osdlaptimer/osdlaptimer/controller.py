@@ -4,11 +4,16 @@ from osdlaptimer.serialcomm import SerialComm
 from Queue import Queue
 
 class Controller(object):
-    def __init__(self, hostip):   
+    def __init__(self, hostip, token):   
         self.squeue = Queue()
         self.irlap = IrLap(self, hostip)
         self.laptimerinfo = LapTimerInfo(self, hostip)
         self.serialcomm = SerialComm(self)
+        if token == 0:
+            self.takelasttoken = 1
+        else:
+            self.takelasttoken = 0
+        self.token = token
 
     def start(self):
         self.irlap.start()

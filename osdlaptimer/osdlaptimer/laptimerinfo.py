@@ -16,9 +16,8 @@ class LapTimerInfo(threading.Thread):
             data = response.json()
             
             for x in data['data']:
-                if x['pilot']['transponder_token'] == '12':
+                if x['pilot']['transponder_token'] == self.controller.token:
                     self.controller.sendToSerialPort("1" + x['pilot']['name'])
                     self.controller.sendToSerialPort("3" + self.controller.timeFromMillis(x['fastest_lap']['lap_time']))
-                   
-            
+                            
             time.sleep(30)
